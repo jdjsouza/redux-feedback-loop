@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // make it look nice
 import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
 
 class HomePage extends Component {
   state = {
@@ -16,11 +17,19 @@ class HomePage extends Component {
   };
 
   nextButton = (event) => {
-    this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling });
-    this.setState({
-      feeling: '',
-    });
-    this.props.history.push('/content');
+    if (this.state.feeling === '' || isNaN(this.state.feeling)) {
+      swal('Field Required', 'Please enter a number between 1 and 5', 'error');
+      return;
+    } else if (this.state.feeling < 0 || this.state.feeling > 5) {
+      swal('Input', 'Please use a number between 1 and 5', 'error');
+      return;
+    } else {
+      this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling });
+      this.setState({
+        feeling: '',
+      });
+      this.props.history.push('/content');
+    }
   };
 
   render() {
