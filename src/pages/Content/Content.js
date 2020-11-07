@@ -20,7 +20,7 @@ class Content extends Component {
             style={{ width: '200px' }}
             InputProps={{ inputProps: { min: 1, max: 5 } }}
             id="outlined-basic"
-            label="Understanding? 1 to 5"
+            label="1 :'( to 5 :^D"
             variant="outlined"
           />
           <div className="btn">
@@ -29,7 +29,7 @@ class Content extends Component {
               variant="outlined"
               color="primary"
             >
-              Next =>
+              Next {'=>'}
             </Button>
           </div>
           {/* I need a fancy button here to move to the next page and send the data to redux */}

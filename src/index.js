@@ -8,9 +8,18 @@ import { Provider } from 'react-redux';
 
 const feedbackInitialState = [];
 
+// collect the HomePage answer about feelings
+const feelingReducer = (state = feedbackInitialState, action) => {
+  if (action.type === 'ADD_FEELING') {
+    return [...state, action.payload];
+  } else {
+    return state;
+  }
+};
+
 const storeInstance = createStore(
   combineReducers({
-    // gonna need some code here eventually
+    feelingReducer,
   })
 );
 

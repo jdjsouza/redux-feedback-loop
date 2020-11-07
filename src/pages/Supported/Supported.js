@@ -18,7 +18,7 @@ class Supported extends Component {
             style={{ width: '175px' }}
             InputProps={{ inputProps: { min: 1, max: 5 } }}
             id="outlined-basic"
-            label="Supported? 1 to 5"
+            label="1 :'( to 5 :^D"
             variant="outlined"
           />
           <div className="btn">
@@ -27,7 +27,7 @@ class Supported extends Component {
               variant="outlined"
               color="primary"
             >
-              Next =>
+              Next {'=>'}
             </Button>
           </div>
         </form>

@@ -27,7 +27,7 @@ class Comments extends Component {
               variant="outlined"
               color="primary"
             >
-              Next =>
+              Next {'=>'}
             </Button>
           </div>
         </form>
