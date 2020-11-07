@@ -11,7 +11,7 @@ class Content extends Component {
 
   handleChange = (event) => {
     this.setState({
-      understanding: event.target.value,
+      understanding: parseInt(event.target.value),
     });
   };
 

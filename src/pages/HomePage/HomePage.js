@@ -11,7 +11,7 @@ class HomePage extends Component {
 
   handleChange = (event) => {
     this.setState({
-      feeling: event.target.value,
+      feeling: parseInt(event.target.value),
     });
   };
 
