@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { TextField } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 class Comments extends Component {
+  nextButton = (event) => {
+    this.props.history.push('/review');
+  };
+
   render() {
     return (
       <div className="formContainer">
@@ -16,6 +21,15 @@ class Comments extends Component {
             label="Comments"
             variant="outlined"
           />
+          <div className="btn">
+            <Button
+              onClick={this.nextButton}
+              variant="outlined"
+              color="primary"
+            >
+              Next =>
+            </Button>
+          </div>
         </form>
         {/* I need a fancy button here to move to the next page and send the data to redux */}
       </div>

@@ -26,3 +26,9 @@
 .formQuestion {
   font-weight: normal !important;
 }
+
+.btn {
+  margin: 30px auto;
+  width: auto;
+  text-align: center;
+}
