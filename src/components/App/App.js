@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 // route imports for pages
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
