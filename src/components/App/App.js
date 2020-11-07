@@ -7,6 +7,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 import Content from '../../pages/Content/Content';
 import Supported from '../../pages/Supported/Supported';
 import Comments from '../../pages/Comments/Comments';
+import Review from '../../pages/Review/Review';
 
 class App extends Component {
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
         <Route exact path="/content" component={Content} />
         <Route exact path="/supported" component={Supported} />
         <Route exact path="/comments" component={Comments} />
-        {/* Need to add a review page here */}
+        <Route exact path="/review" component={Review} />
       </Router>
     );
   }
