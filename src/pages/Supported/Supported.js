@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // make it look nice
 import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
 
 class Supported extends Component {
   state = {
@@ -11,15 +12,23 @@ class Supported extends Component {
 
   handleChange = (event) => {
     this.setState({
-      support: parseInt(this.event.target.value),
+      support: parseInt(event.target.value),
     });
   };
 
   nextButton = (event) => {
-    this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support });
-    this.setState({
-      support: '',
-    });
+    if (this.state.support === '' || isNaN(this.state.support)) {
+      swal('Field Required', 'Please enter a number between 1 and 5', 'error');
+      return;
+    } else if (this.state.support < 0 || this.state.support > 5) {
+      swal('Input', 'Please use a number between 1 and 5', 'error');
+      return;
+    } else {
+      this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support });
+      this.setState({
+        support: '',
+      });
+    }
     this.props.history.push('/comments');
   };
 
