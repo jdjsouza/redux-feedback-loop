@@ -25,6 +25,7 @@ class App extends Component {
         <Route exact path="/content" component={Content} />
         <Route exact path="/supported" component={Supported} />
         <Route exact path="/comments" component={Comments} />
+        {/* Need to add a review page here */}
       </Router>
     );
   }

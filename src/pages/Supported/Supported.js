@@ -17,6 +17,7 @@ class Supported extends Component {
             variant="outlined"
           />
         </form>
+        {/* I need a fancy button here to move to the next page and send the data to redux */}
       </div>
     );
   }

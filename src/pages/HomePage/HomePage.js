@@ -16,6 +16,7 @@ class HomePage extends Component {
             label="Feelings? 1 to 5"
             variant="outlined"
           />
+          {/* I need a fancy button here to move to the next page and send the data to redux */}
         </form>
       </div>
     );

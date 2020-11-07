@@ -18,6 +18,7 @@ class Content extends Component {
             label="Understanding? 1 to 5"
             variant="outlined"
           />
+          {/* I need a fancy button here to move to the next page and send the data to redux */}
         </form>
       </div>
     );
