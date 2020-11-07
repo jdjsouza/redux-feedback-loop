@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 // route imports for pages
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage';
 import Content from '../../pages/Content/Content';
 import Supported from '../../pages/Supported/Supported';

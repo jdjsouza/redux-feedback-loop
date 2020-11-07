@@ -5,7 +5,21 @@ import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 class Comments extends Component {
+  state = {
+    comments: '',
+  };
+
+  handleChange = (event) => {
+    this.state({
+      comments: event.target.value,
+    });
+  };
+
   nextButton = (event) => {
+    this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
+    this.setState({
+      comments: '',
+    });
     this.props.history.push('/review');
   };
 
@@ -38,4 +52,8 @@ class Comments extends Component {
   }
 }
 
-export default Comments;
+const mapStoreToProps = (store) => ({
+  store,
+});
+
+export default connect(mapStoreToProps)(Comments);
