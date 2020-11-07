@@ -19,16 +19,14 @@ router.post('/', (req, res) => {
   console.log(`In /api/feedback POST with`, req.body);
 
   const newFeedback = req.body;
-  const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "supports", "comments", "flagged", "date")
-                         VALUES ($1, $2, $3, $4, $5, $6);`;
+  const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "supports", "comments")
+                         VALUES ($1, $2, $3, $4);`;
   pool
     .query(queryText, [
       newFeedback.feeling,
       newFeedback.understanding,
       newFeedback.supports,
       newFeedback.comments,
-      newFeedback.flagged,
-      newFeedback.date,
     ])
     .then((responseFromDatabase) => {
       console.log(responseFromDatabase);
