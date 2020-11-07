@@ -16,11 +16,6 @@ class Comments extends Component {
   };
 
   nextButton = (event) => {
-    if (this.state.comments === null) {
-      this.setState({
-        comments: '',
-      });
-    }
     this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
     this.setState({
       comments: '',

@@ -25,8 +25,12 @@ router.post('/', (req, res) => {
     .query(queryText, [
       Number(newFeedback.feeling),
       Number(newFeedback.understanding),
-      Number(newFeedback.supports),
+      Number(newFeedback.support),
       newFeedback.comments,
+      // valOne,
+      // valTwo,
+      // valThree,
+      // valFour,
     ])
     .then((responseFromDatabase) => {
       console.log(responseFromDatabase);
