@@ -17,9 +17,18 @@ const feelingReducer = (state = feedbackInitialState, action) => {
   }
 };
 
+const understandingReducer = (state = feedbackInitialState, action) => {
+  if (action.type === 'ADD_UNDERSTANDING') {
+    return [...state, action.payload];
+  } else {
+    return state;
+  }
+};
+
 const storeInstance = createStore(
   combineReducers({
     feelingReducer,
+    understandingReducer,
   })
 );
 

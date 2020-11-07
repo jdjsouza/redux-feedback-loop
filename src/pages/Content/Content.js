@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 class Content extends Component {
+  state = {
+    understanding: '',
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      understanding: event.target.value,
+    });
+  };
+
   nextButton = (event) => {
+    this.props.dispatch({
+      type: 'ADD_UNDERSTANDING',
+      payload: this.state.understanding,
+    });
+    this.setState({
+      understanding: '',
+    });
     this.props.history.push('/supported');
   };
 
@@ -16,6 +34,7 @@ class Content extends Component {
         </h1>
         <form className="formQuestion" noValidate autoComplete="off">
           <TextField
+            onChange={this.handleChange}
             type="number"
             style={{ width: '200px' }}
             InputProps={{ inputProps: { min: 1, max: 5 } }}
@@ -39,4 +58,8 @@ class Content extends Component {
   }
 }
 
-export default Content;
+const mapStoreToProps = (store) => ({
+  store,
+});
+
+export default connect(mapStoreToProps)(Content);

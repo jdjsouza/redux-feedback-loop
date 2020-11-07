@@ -13,7 +13,6 @@ class HomePage extends Component {
     this.setState({
       feeling: event.target.value,
     });
-    console.log('handleChange', event.target.value);
   };
 
   nextButton = (event) => {
