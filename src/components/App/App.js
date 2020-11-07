@@ -7,6 +7,7 @@ import Content from '../../pages/Content/Content';
 import Supported from '../../pages/Supported/Supported';
 import Comments from '../../pages/Comments/Comments';
 import Review from '../../pages/Review/Review';
+import Confirm from '../../pages/Confirm/Confirm';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
         <Route exact path="/supported" component={Supported} />
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/review" component={Review} />
+        <Route exact path="/confirm" component={Confirm} />
       </Router>
     );
   }

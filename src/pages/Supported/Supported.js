@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button';
 import swal from 'sweetalert';
 
 class Supported extends Component {
-  state = {
-    support: '',
-  };
+  // state = {
+  //   support: '',
+  // };
 
   handleChange = (event) => {
     this.setState({
@@ -25,9 +25,9 @@ class Supported extends Component {
       return;
     } else {
       this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support });
-      this.setState({
-        support: '',
-      });
+      // this.setState({
+      //   support: '',
+      // });
     }
     this.props.history.push('/comments');
   };

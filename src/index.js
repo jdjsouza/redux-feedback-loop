@@ -11,7 +11,7 @@ const feedbackInitialState = [];
 // collect the HomePage answer about feelings
 const feelingReducer = (state = feedbackInitialState, action) => {
   if (action.type === 'ADD_FEELING') {
-    return [...state, action.payload];
+    return action.payload;
   } else {
     return state;
   }
@@ -19,7 +19,7 @@ const feelingReducer = (state = feedbackInitialState, action) => {
 
 const understandingReducer = (state = feedbackInitialState, action) => {
   if (action.type === 'ADD_UNDERSTANDING') {
-    return [...state, action.payload];
+    return action.payload;
   } else {
     return state;
   }
@@ -27,15 +27,15 @@ const understandingReducer = (state = feedbackInitialState, action) => {
 
 const supportReducer = (state = feedbackInitialState, action) => {
   if (action.type === 'ADD_SUPPORT') {
-    return [...state, action.payload];
+    return action.payload;
   } else {
     return state;
   }
 };
 
-const commentReducer = (state = feedbackInitialState, action) => {
+const commentReducer = (state = '', action) => {
   if (action.type === 'ADD_COMMENTS') {
-    return [...state, action.payload];
+    return action.payload;
   } else {
     return state;
   }

@@ -10,12 +10,17 @@ class Comments extends Component {
   };
 
   handleChange = (event) => {
-    this.state({
+    this.setState({
       comments: event.target.value,
     });
   };
 
   nextButton = (event) => {
+    if (this.state.comments === null) {
+      this.setState({
+        comments: '',
+      });
+    }
     this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
     this.setState({
       comments: '',
@@ -29,6 +34,7 @@ class Comments extends Component {
         <h1 className="formQuestion">How well are you being supported?</h1>
         <form className="formQuestion" noValidate autoComplete="off">
           <TextField
+            onChange={this.handleChange}
             type="text"
             fullWidth
             multiline

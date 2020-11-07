@@ -16,16 +16,16 @@ const pool = require('../modules/pool');
 // });
 
 router.post('/', (req, res) => {
-  console.log(`In /api/feedback POST with`, req.body);
-
+  console.log(`In / POST with`, req.body);
   const newFeedback = req.body;
-  const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "supports", "comments")
+  console.log(`newFeedback`, newFeedback);
+  const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                          VALUES ($1, $2, $3, $4);`;
   pool
     .query(queryText, [
-      newFeedback.feeling,
-      newFeedback.understanding,
-      newFeedback.supports,
+      Number(newFeedback.feeling),
+      Number(newFeedback.understanding),
+      Number(newFeedback.supports),
       newFeedback.comments,
     ])
     .then((responseFromDatabase) => {
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
       res.sendStatus(201);
     })
     .catch((error) => {
-      console.log(`Error in POST /api/feedback ${error}`);
+      console.log(`Error in POST / ${error}`);
       res.sendStatus(500);
     });
 });
