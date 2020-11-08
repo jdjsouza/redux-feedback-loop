@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a daily feedback that saves the responses to a database. Each question is it's own 'page' and the scale is from 1 to 5 on the first three questions that are required. The comment section is not required and is a text field that can be several paragraphs long.
+This is a daily feedback form that saves the responses to a database. Each question is it's own 'page' and the scale is from 1 to 5 on the first three questions that are required. The comment section is not required and is a text field that can be several paragraphs long.
 
 ## Installation
 
