@@ -1,9 +1,21 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Redux Feedback Loop
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a daily feedback that saves the responses to a database. Each question is it's own 'page' and the scale is from 1 to 5 on the first three questions that are required. The comment section is not required and is a text field that can be several paragraphs long.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Installation
+
+1. Create a PG database named prime_feedback.
+2. The table queries are in the data.sql file.
+3. Open your editor and run 'npm i' followed by 'npm audit fix' in the terminal
+4. Run: 'npm run server' in your terminal
+5. Run: 'npm run client' in your terminal.
+
+## Built With
+
+React and Redux
+Postgresql
+Axios
+Material UI
+Sweetalert
