@@ -21,6 +21,10 @@ class Review extends Component {
       });
   };
 
+  backButton = (event) => {
+    this.props.history.push('/comments');
+  };
+
   render() {
     return (
       <div className="formContainer">
@@ -50,6 +54,14 @@ class Review extends Component {
           </p>
         </div>
         <div className="btn">
+          <Button
+            style={{ marginRight: '10px' }}
+            onClick={this.backButton}
+            variant="outlined"
+            color="primary"
+          >
+            {'<='} Previous
+          </Button>
           <Button
             onClick={this.submitButton}
             variant="outlined"

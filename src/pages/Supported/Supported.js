@@ -32,6 +32,10 @@ class Supported extends Component {
     this.props.history.push('/comments');
   };
 
+  backButton = (event) => {
+    this.props.history.push('/content');
+  };
+
   render() {
     return (
       <div className="formContainer">
@@ -47,6 +51,14 @@ class Supported extends Component {
             variant="outlined"
           />
           <div className="btn">
+            <Button
+              style={{ marginRight: '10px' }}
+              onClick={this.backButton}
+              variant="outlined"
+              color="primary"
+            >
+              {'<='} Previous
+            </Button>
             <Button
               onClick={this.nextButton}
               variant="outlined"
