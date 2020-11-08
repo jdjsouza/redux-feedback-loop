@@ -14,8 +14,9 @@ This is a daily feedback form that saves the responses to a database. Each quest
 
 ## Built With
 
-React and Redux
-Postgresql
-Axios
-Material UI
-Sweetalert
+1. React
+2. Redux
+3. Postgresql
+4. Axios
+5. Material UI
+6. Sweetalert
